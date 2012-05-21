@@ -3,7 +3,7 @@ import sys, types
 from django.conf import settings
 from django.db import models
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from feincms.models import Base, Template
 from mptt.models import MPTTModel, MPTTModelBase
