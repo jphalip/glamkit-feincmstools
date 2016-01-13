@@ -1,5 +1,10 @@
-from django.utils.datastructures import SortedDict
 import sys
+
+try:
+    from collections import OrderedDict
+except ImportError:
+    from django.utils.datastructures import SortedDict as OrderedDict
+
 
 def create_content_types(feincms_model, content_types_by_region_fn):
 
@@ -9,8 +14,8 @@ def create_content_types(feincms_model, content_types_by_region_fn):
     # populate a dict of registration parameters for each type
     # e.g. type: (category, [regions])
     # registration order matters as we want to control the ordering in
-    # the admin menu. Hence SortedDict.
-    types_to_register = SortedDict()
+    # the admin menu. Hence OrderedDict.
+    types_to_register = OrderedDict()
     for region, category_types in types_by_regions:
         for category, types in category_types:
             for type in types:
