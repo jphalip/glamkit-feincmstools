@@ -5,7 +5,6 @@ import sys
 
 from django.db import models
 from django.http import HttpRequest
-from django.utils.datastructures import SortedDict
 from django.utils.translation import ugettext_lazy as _
 
 from feincms.models import create_base_model
